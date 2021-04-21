@@ -1,7 +1,7 @@
 import streamlit as st
 from notion.client import NotionClient
 
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, ttl=12*60*60)
 def get_data(token_v2, db_url):
     client = NotionClient(token_v2=token_v2)
     cv = client.get_collection_view(db_url)
