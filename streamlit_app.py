@@ -1,7 +1,7 @@
 import streamlit as st
 from notion.client import NotionClient
 
-DB_URL = "https://www.notion.so/streamlit/fdd164419a79454f993984b1f8e21f66"
+DB_URL = "https://www.notion.so/streamlit/fdd164419a79454f993984b1f8e21f66?v=2d8175df95de4f56816a423f2b65f131"
 
 @st.cache(allow_output_mutation=True, ttl=12*60*60)
 def get_data(token_v2, db_url):
