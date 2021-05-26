@@ -1,6 +1,8 @@
 import streamlit as st
 from notion.client import NotionClient
 
+DB_URL = "https://www.notion.so/streamlit/fdd164419a79454f993984b1f8e21f66"
+
 @st.cache(allow_output_mutation=True, ttl=12*60*60)
 def get_data(token_v2, db_url):
     client = NotionClient(token_v2=token_v2)
@@ -43,7 +45,7 @@ def get_data(token_v2, db_url):
 
 in_progress_rows, early_stage_rows = get_data(
     st.secrets["notion"]["token_v2"],
-    st.secrets["notion"]["db"])
+    DB_URL)
 
 
 def display_project(row):
